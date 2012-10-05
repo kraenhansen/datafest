@@ -2,6 +2,7 @@ from django.conf.urls import patterns, include, url
 
 # Uncomment the next two lines to enable the admin:
 from django.contrib import admin
+from datasets.api import DatasetResource
 admin.autodiscover()
 
 dataset_resource = DatasetResource()
@@ -9,7 +10,7 @@ dataset_resource = DatasetResource()
 urlpatterns = patterns('',
     url(r'^$', 'datasets.views.overview', name='overview'),
     url(r'^test$', 'datasets.views.test', name='test'),
-    url(r'^api/', include(dataset_resource.urls)),
+    (r'^api/', include(dataset_resource.urls)),
     # Examples:
     # url(r'^datafest/', include('datafest.foo.urls')),
 
