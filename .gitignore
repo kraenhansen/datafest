@@ -1,2 +1,2 @@
 *.pyc
-local-database.sqlite
+localdb.sqlite
