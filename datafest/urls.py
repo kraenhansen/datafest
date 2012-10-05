@@ -4,8 +4,12 @@ from django.conf.urls import patterns, include, url
 from django.contrib import admin
 admin.autodiscover()
 
+dataset_resource = DatasetResource()
+
 urlpatterns = patterns('',
     url(r'^$', 'datasets.views.overview', name='overview'),
+    url(r'^test$', 'datasets.views.test', name='test'),
+    url(r'^api/', include(dataset_resource.urls)),
     # Examples:
     # url(r'^datafest/', include('datafest.foo.urls')),
 
