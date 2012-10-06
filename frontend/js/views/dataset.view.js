@@ -12,8 +12,6 @@ define(
             },
             
             initialize: function() {
-                var keyHandler = _.bind(this.keyHandler, this);
-                $(document).bind('keyup', keyHandler);
             },
             show: function() {
                 this.$el.show();
@@ -33,6 +31,11 @@ define(
                 this.model = model;
                 this.numRecords = model.get('records').length;
                 
+                
+                var keyHandler = _.bind(this.keyHandler, this);
+                $(document).unbind('keyup');
+                $(document).bind('keyup', keyHandler);         
+
                 this.render();
                 this.show();
             },
@@ -57,13 +60,13 @@ define(
             advance: function(direction) {
                 console.log('advancing '+direction);
                 
-                this.recordIdx = (this.recordIdx + direction) % this.numRecords;
+                this.recordIdx = (this.recordIdx + direction + this.numRecords) % this.numRecords;
                 this.render();
             },
             
             hide: function() {
                 // Do the hiding
-                
+                this.$el.hide();
                 $(document).unbind('keyup');
             }
             
