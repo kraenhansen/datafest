@@ -5,8 +5,9 @@
 <table>
 <tr><th>Key</th><th>Value</th></tr>
 <%
-    _.each(kvTuples, function(tuple) { %>
-        <tr><td><%= tuple.key %></td><td><%= tuple.value %></td></tr>
+   _.each(Object.keys(tuple), function(key) {
+   %>
+        <tr><td><%= key %></td><td><%= tuple[key] %></td></tr>
 <%  });
 %>
 </table>

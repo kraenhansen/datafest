@@ -4,13 +4,14 @@ define(
         var DataSetView = Backbone.View.extend({
             id: "dataSetView",
             template: templateText,
+            recordIdx: 0,
+            numRecords: 5,
             events: {
                 "click #leftArrow": "clickHandler",
                 "click #rightArrow": "clickHandler"
             },
             
             initialize: function() {
-                this.render();
                 var keyHandler = _.bind(this.keyHandler, this);
                 $(document).bind('keyup', keyHandler);
             },
@@ -19,8 +20,8 @@ define(
             },
             render: function() {
                 var context = {
-                    title: "Woot "+this.model,
-                    kvTuples: [{key: "foo", value: "bar"}]
+                    title: this.model.get('title'),
+                    tuple: this.model.get('records')[this.recordIdx]
                 };
 
                 var content = _.template(this.template, context);
@@ -28,8 +29,10 @@ define(
             },
             
             // Sets a new dataset ID and renders
-            reset: function(id) {
-                this.model = id;
+            reset: function(model) {
+                this.model = model;
+                this.numRecords = model.get('records').length;
+                
                 this.render();
                 this.show();
             },
@@ -53,6 +56,9 @@ define(
             
             advance: function(direction) {
                 console.log('advancing '+direction);
+                
+                this.recordIdx = (this.recordIdx + direction) % this.numRecords;
+                this.render();
             },
             
             hide: function() {

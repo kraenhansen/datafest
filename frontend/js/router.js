@@ -1,5 +1,6 @@
 define(
-    function() {
+    ['collections/dataset.collection'],
+    function(DataSetCollection) {
         var DatafestRouter = Backbone.Router.extend(
             {
                 view: null,
@@ -11,11 +12,22 @@ define(
                 },
                 loadDataset: function(id) {
                     console.log('loading dataset '+id);
-                    this.view.reset(id);
+
+                    var model = null;
+                    $.getJSON(
+                        '/datafest/testSet.json', 
+                        _.bind(function(data) { 
+                            model = new Backbone.Model(data);
+                            
+                            var records = new DataSetCollection(data.records);
+                            
+                            this.view.reset(model);
+                        }, this)
+                    );
                 }
             }
         );
-        
+
         return DatafestRouter;
     }
 );
