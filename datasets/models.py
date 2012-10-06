@@ -7,6 +7,8 @@ class Dataset(models.Model):
     contact_email = models.EmailField()
     pmh_url = models.CharField(max_length=2000)
     metadata_prefix = models.CharField(max_length=200)
+    transformation = models.TextField()
+
         
 class Resource(object):
     title = ""
@@ -30,6 +32,5 @@ class FieldChange(models.Model):
         group by (fieldname)
         having (datetime=max(datetime))""" % cls._meta.db_table
         return cls.objects.raw(query, [identifier])
-        
         
         
