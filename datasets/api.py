@@ -61,9 +61,14 @@ class RecordResource(Resource):
                         dataset = Dataset.objects.get(pk=kwargs.get('dataset_pk'))
                 except Dataset.DoesNotExist:
                         dataset = Dataset.get_default()
-		metadata_values = get_key_values(url=dataset.pmh_url, transform_sheet=dataset.transformation, identifier=kwargs['pk'])
+		metadata_values = get_key_values(url=dataset.pmh_url, 
+                                                 transform_sheet=dataset.transformation, 
+                                                 identifier=kwargs['pk'])
 		return dict(metadata = metadata_values, identifier=kwargs['pk'])
-
+        
+        def obj_save(self):
+                pass
+                
 	def dehydrate_identifier(self, bundle):
 		if isinstance(bundle.obj, Header):
 			return bundle.obj.identifier()

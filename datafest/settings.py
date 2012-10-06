@@ -102,7 +102,6 @@ TEMPLATE_DIRS = (
         os.path.join(DJANGO_DIR, "templates"),
 )
 
-print TEMPLATE_DIRS
 INSTALLED_APPS = (
     'django.contrib.auth',
     'django.contrib.contenttypes',

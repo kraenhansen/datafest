@@ -3,6 +3,7 @@ from django.template import Context, loader
 from oaipmh.client import Client
 from oaipmh.metadata import MetadataRegistry, oai_dc_reader
 from datasets.models import Dataset
+import json
 
 def populate_db(self):
         Dataset.get_default()
@@ -26,4 +27,15 @@ def test(request):
 	#for record in client.listRecords(metadataPrefix='oai_dc'):
 	#	result += record
 	return HttpResponse(identifyResponse.repositoryName())
-	
+
+def save_change(request):
+        data = json.loads(request.POST.get('data', {}))
+        identifier = data.get('identifier')
+        fieldname = data.get('fieldname')
+        value = data.get('name')
+
+        if identifier:
+                FieldChange.objects.create(identifier=identifier,
+                                           fieldname=fieldname,
+                                           value=value)
+        return HttpResponse("OK!")
