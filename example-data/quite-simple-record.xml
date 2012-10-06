@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OAI-PMH xmlns="http://www.openarchives.org/OAI/2.0/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.openarchives.org/OAI/2.0/ http://www.openarchives.org/OAI/2.0/OAI-PMH.xsd"><responseDate>2012-10-05T21:39:25Z</responseDate><request verb="ListRecords" set="SAVE" metadataPrefix="fbb">http://172.22.142.35:9090/repox/OAIHandler</request><ListRecords>
+<record><header><identifier>kulturarv.dkSAVE:http://www.kulturarv.dk/fbb/building/10050122</identifier><datestamp>2012-10-04</datestamp><setSpec>SAVE</setSpec></header><metadata><fbb:buildingWrap xmlns:fbb="http://www.kulturarv.dk/fbb" xmlns="http://www.kulturarv.dk" xmlns:gml="http://www.opengis.net/gml" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.kulturarv.dk/fbb http://www.kulturarv.dk/fbb/fbb.xsd http://www.opengis.net/gml http://schemas.opengis.net/gml/3.1.1/base/gml.xsd">
+<fbb:rightsWorkWrap>
+  <fbb:rightsWorkSet>
+    <fbb:rightsType>
+      <fbb:conceptID>uri</fbb:conceptID>
+      <fbb:term>Copyright</fbb:term>
+    </fbb:rightsType>
+    <fbb:rightsDate>2011-12-01</fbb:rightsDate>
+    <fbb:rightsHolder>
+      <fbb:legalBodyID>DK26489865</fbb:legalBodyID>
+      <fbb:legalBodyName>Kulturstyrelsen</fbb:legalBodyName>
+      <fbb:legalBodyWeblink>http://www.kulturstyrelsen.dk</fbb:legalBodyWeblink>
+    </fbb:rightsHolder>
+    <fbb:creditLine>Metadata published under CC0 1.0 Universal Public Domain.  Dedication   http:// http://creativecommons.org/publicdomain/zero/1.0/ Kulturstyrelsen has dedicated the work to the public domain by waiving all rights to the work worldwide under copyright law, including all related and neighboring rights, to the extent allowed by law. You can copy, modify, distribute and perform the work, even for commercial purposes, without asking permission.</fbb:creditLine>
+  </fbb:rightsWorkSet>
+  <fbb:rightsWorkSet>
+    <fbb:rightsType>
+      <fbb:conceptID>uri</fbb:conceptID>
+      <fbb:term>Copyright</fbb:term>
+    </fbb:rightsType>
+    <fbb:rightsDate>2011-12-01</fbb:rightsDate>
+    <fbb:rightsHolder>
+      <fbb:legalBodyID>DK26489865</fbb:legalBodyID>
+      <fbb:legalBodyName>Erhvervsstyrelsen</fbb:legalBodyName>
+      <fbb:legalBodyWeblink>http://www.erst.dk</fbb:legalBodyWeblink>
+    </fbb:rightsHolder>
+    <fbb:creditLine>All data from the Registry of Buildings and housing (Bygnings- og Boligregistret - BBR) including Street Name, House No, Post code, Postal district, X- and Y coordinates, building type and construction year are copyright of the Danish Business Authority (Erhvervsstyrelsen). All rights reserved. BBR data may not be used for marketing purposes.</fbb:creditLine>
+  </fbb:rightsWorkSet>
+</fbb:rightsWorkWrap>
+<fbb:building>
+  <fbb:id>http://www.kulturarv.dk/fbb/building/10050122</fbb:id>
+  <fbb:designation>Bevaringsværdi 4</fbb:designation>
+  <fbb:BBR>
+    <fbb:id>{B8508710-AF59-49AB-8CFD-EC3CB3D93447}</fbb:id>
+    <fbb:municipality>
+      <fbb:conceptID>370</fbb:conceptID>
+      <fbb:term>Næstved</fbb:term>
+    </fbb:municipality>
+    <fbb:propertyNumber>14021</fbb:propertyNumber>
+    <fbb:buildingNumber>1</fbb:buildingNumber>
+    <fbb:cadastre>
+      <fbb:cadastreNumber>12M</fbb:cadastreNumber>
+      <fbb:zone>
+        <fbb:conceptID>1</fbb:conceptID>
+        <fbb:term>Byzone</fbb:term>
+      </fbb:zone>
+      <fbb:nationalTownshipNumber>280853</fbb:nationalTownshipNumber>
+      <fbb:municipalTownshipNumber>236</fbb:municipalTownshipNumber>
+      <fbb:townshipName>RØNNEBÆK</fbb:townshipName>
+    </fbb:cadastre>
+    <fbb:primaryAddress>
+      <fbb:streetNumber>553</fbb:streetNumber>
+      <fbb:streetName>Gækhøjvej</fbb:streetName>
+      <fbb:location>
+        <gml:MultiPoint srsName="EPSG:25832">
+          <gml:pointMember>
+            <gml:Point>
+              <gml:coordinates>678839.07,6122588.7</gml:coordinates>
+            </gml:Point>
+          </gml:pointMember>
+        </gml:MultiPoint>
+      </fbb:location>
+      <fbb:house_no>3</fbb:house_no>
+      <fbb:post_code>4700</fbb:post_code>
+      <fbb:postal_district>Næstved</fbb:postal_district>
+      <fbb:coordinate>
+        <fbb:x>678839.07</fbb:x>
+        <fbb:y>6122588.7</fbb:y>
+      </fbb:coordinate>
+    </fbb:primaryAddress>
+    <fbb:constructionYear>1916-01-01</fbb:constructionYear>
+    <fbb:conversionYear xsi:nil="true"/>
+    <fbb:builtArea>74</fbb:builtArea>
+    <fbb:totalArea>74</fbb:totalArea>
+    <fbb:floors>1</fbb:floors>
+    <fbb:usage>
+      <fbb:conceptID>384</fbb:conceptID>
+      <fbb:term>Fritliggende enfamiliehus</fbb:term>
+    </fbb:usage>
+    <fbb:outerWalls>
+      <fbb:conceptID>455</fbb:conceptID>
+      <fbb:term>Mursten (tegl, kalksandsten, cementsten) </fbb:term>
+    </fbb:outerWalls>
+    <fbb:roof>
+      <fbb:conceptID>471</fbb:conceptID>
+      <fbb:term>Tegl</fbb:term>
+    </fbb:roof>
+    <fbb:materialsSource>
+      <fbb:conceptID>1026</fbb:conceptID>
+      <fbb:term>Oplyst af teknisk forvaltning</fbb:term>
+    </fbb:materialsSource>
+    <fbb:areaSource>
+      <fbb:conceptID>2</fbb:conceptID>
+      <fbb:term>Oplyst af teknisk forvaltning</fbb:term>
+    </fbb:areaSource>
+    <fbb:detached xsi:nil="true"/>
+    <fbb:buildingType xsi:nil="true"/>
+  </fbb:BBR>
+  <fbb:photographWrap>
+    <fbb:photograph>
+      <fbb:rightsWorkWrap>
+        <fbb:rightsWorkSet>
+          <fbb:rightsType>
+            <fbb:conceptID>uri</fbb:conceptID>
+            <fbb:term>Copyright</fbb:term>
+          </fbb:rightsType>
+          <fbb:rightsDate>2011-12-01</fbb:rightsDate>
+          <fbb:rightsHolder>
+            <fbb:legalBodyID>DK26489865</fbb:legalBodyID>
+            <fbb:legalBodyName>Kulturstyrelsen</fbb:legalBodyName>
+            <fbb:legalBodyWeblink>http://www.kulturstyrelsen.dk</fbb:legalBodyWeblink>
+          </fbb:rightsHolder>
+          <fbb:creditLine>Photographs are published under Creative Commons Attribution-NonCommercial-NoDerivs 3.0 Unported - ttp://creativecommons.org/licenses/by-nc-nd/3.0/ You must attribute the work in the manner specified by the author or licensor (but not in any way that suggests that they endorse you or your use of the work). You may not use this work for commercial purposes. You may not alter, transform, or build upon this work.</fbb:creditLine>
+        </fbb:rightsWorkSet>
+      </fbb:rightsWorkWrap>
+      <fbb:id>http://www.kulturarv.dk/fbb/resource/10050122</fbb:id>
+      <fbb:name>Gækhøjvej 3, 4700  Næstved</fbb:name>
+      <fbb:photographer xsi:nil="true"/>
+      <fbb:uploadedFileName/>
+      <fbb:createdDate>2012-10-03</fbb:createdDate>
+      <fbb:link fbb:formatResource="image/png">http://www.kulturarv.dk/fbb/resource/10050122</fbb:link>
+      <fbb:isShownAt fbb:formatResource="text/html">http://www.kulturarv.dk/fbb/building/10050122.html</fbb:isShownAt>
+      <fbb:description>Kortet viser bygningens placering i Danmark</fbb:description>
+      <fbb:keywords/>
+      <fbb:contentType>image/png</fbb:contentType>
+    </fbb:photograph>
+  </fbb:photographWrap>
+  <fbb:caseWrap>
+    <fbb:rightsWorkWrap>
+      <fbb:rightsWorkSet>
+        <fbb:rightsType>
+          <fbb:conceptID>uri</fbb:conceptID>
+          <fbb:term>Copyright</fbb:term>
+        </fbb:rightsType>
+        <fbb:rightsDate>2011-12-01</fbb:rightsDate>
+        <fbb:rightsHolder>
+          <fbb:legalBodyID>DK26489865</fbb:legalBodyID>
+          <fbb:legalBodyName>Kulturstyrelsen</fbb:legalBodyName>
+          <fbb:legalBodyWeblink>http://www.kulturstyrelsen.dk</fbb:legalBodyWeblink>
+        </fbb:rightsHolder>
+        <fbb:creditLine>Metadata published under CC0 1.0 Universal Public Domain.  Dedication   http:// http://creativecommons.org/publicdomain/zero/1.0/ Kulturstyrelsen has dedicated the work to the public domain by waiving all rights to the work worldwide under copyright law, including all related and neighboring rights, to the extent allowed by law. You can copy, modify, distribute and perform the work, even for commercial purposes, without asking permission.</fbb:creditLine>
+      </fbb:rightsWorkSet>
+    </fbb:rightsWorkWrap>
+    <fbb:case>
+      <fbb:id>http://www.kulturarv.dk/fbb/case/10050080</fbb:id>
+      <fbb:caseType>
+        <fbb:conceptID>1</fbb:conceptID>
+        <fbb:term>SAVE-sag</fbb:term>
+      </fbb:caseType>
+      <fbb:name>Kommuneatlas for Næstved Kommune</fbb:name>
+      <fbb:extent>Alle bygninger i kommunen opført senest 1940, undtagen udhuse og carporte.  Udvalgte nyere bygninger tilføjet sidenhen.</fbb:extent>
+      <fbb:description/>
+      <fbb:status>
+        <fbb:conceptID>1</fbb:conceptID>
+        <fbb:term>Aktiv</fbb:term>
+      </fbb:status>
+      <fbb:comments/>
+      <fbb:numberOfBuildings>5708</fbb:numberOfBuildings>
+      <fbb:createdDate>1991-01-01</fbb:createdDate>
+      <fbb:caseWorkWrap/>
+      <fbb:settlementWrap/>
+      <fbb:notes/>
+      <fbb:caseLocation/>
+      <fbb:architectual_value>4</fbb:architectual_value>
+      <fbb:architectual_assessment/>
+      <fbb:cultural_value>5</fbb:cultural_value>
+      <fbb:cultural_assesment/>
+      <fbb:environmental_value>5</fbb:environmental_value>
+      <fbb:environmental_assesment>FINT UDHUS</fbb:environmental_assesment>
+      <fbb:originality_value>3</fbb:originality_value>
+      <fbb:originality_assesment/>
+      <fbb:condition_value>3</fbb:condition_value>
+      <fbb:condition_assesment/>
+      <fbb:preservation_value>4</fbb:preservation_value>
+      <fbb:preservation_assesment/>
+    </fbb:case>
+  </fbb:caseWrap>
+</fbb:building>
+</fbb:buildingWrap>
+</metadata>
+</record>
+</ListRecords>
+</OAI-PMH>
+
