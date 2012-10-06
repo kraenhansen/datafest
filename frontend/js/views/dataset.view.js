@@ -18,9 +18,10 @@ define(
                 this.$el.show();
             },
             render: function() {
+               
                 var context = {
                     title: this.model.get('title'),
-                    tuple: this.model.get('records')[this.recordIdx]
+                    tuple: this.collection.at(this.recordIdx).toJSON()
                 };
 
                 var content = _.template(this.template, context);
@@ -33,7 +34,8 @@ define(
                 this.model = model;
                 this.numRecords = model.get('records').length;
                 
-                
+                this.collection = new Backbone.Collection(model.get('records'));
+
                 var keyHandler = _.bind(this.keyHandler, this);
                 $(document).unbind('keyup');
                 $(document).bind('keyup', keyHandler);         
@@ -51,7 +53,6 @@ define(
             },
             
             inputClickHandler: function(event) {
-
                 
             },
             
@@ -65,8 +66,14 @@ define(
             },
             
             advance: function(direction) {
-                console.log('advancing '+direction);
+                // Save the old stuff
+                var changes = {};
+                this.$("input:text").each(function() {
+                    changes[$(this).attr('name')] = $(this).val();
+                });
+                this.collection.at(this.recordIdx).set(changes);
                 
+                // advance to the next
                 this.recordIdx = (this.recordIdx + direction + this.numRecords) % this.numRecords;
                 this.render();
             },
