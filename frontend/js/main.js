@@ -18,6 +18,19 @@ require(
             var router = new DatafestRouter(view);
             
             $("body").append(view.$el);
+            
+            $("input:text").live('focus', function(el) {
+                $(this).select();
+                $(this).addClass('active');
+            });
+            
+            $("input:text").live('blur', function(el) {
+                $(this).removeClass('active');
+            });
+            
+            $("input:text").live('mouseup', function(ev) {
+                return false;
+            });
 
             Backbone.history.start({});
         });

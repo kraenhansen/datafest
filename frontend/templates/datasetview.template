@@ -3,12 +3,15 @@
 <div id="rightArrow" class="left">Next</div>
 <div id="tableContainer">
 <table>
-<tr><th>Key</th><th>Value</th></tr>
+<tr><th>Nøgle</th><th>Værdi</th></tr>
 <%
+   var i = 1;
    _.each(Object.keys(tuple), function(key) {
    %>
-        <tr><td><%= key %></td><td><%= tuple[key] %></td></tr>
-<%  });
+        <tr><td><%= key %></td><td><input type="text" name="<%=key%>" value="<%= tuple[key] %>" tabindex="<%=i%>"></td></tr>
+<%
+   i++;
+   });
 %>
 </table>
 </div>

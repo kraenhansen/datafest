@@ -8,7 +8,8 @@ define(
             numRecords: 5,
             events: {
                 "click #leftArrow": "clickHandler",
-                "click #rightArrow": "clickHandler"
+                "click #rightArrow": "clickHandler",
+                "click input": "inputClickHandler"
             },
             
             initialize: function() {
@@ -24,6 +25,7 @@ define(
 
                 var content = _.template(this.template, context);
                 this.$el.html(content);
+                this.$("input:first").focus();
             },
             
             // Sets a new dataset ID and renders
@@ -35,7 +37,7 @@ define(
                 var keyHandler = _.bind(this.keyHandler, this);
                 $(document).unbind('keyup');
                 $(document).bind('keyup', keyHandler);         
-
+                
                 this.render();
                 this.show();
             },
@@ -46,6 +48,11 @@ define(
                 } else if (event.currentTarget.id === "rightArrow") {
                     this.advance(1);
                 }
+            },
+            
+            inputClickHandler: function(event) {
+
+                
             },
             
             keyHandler: function(event) {
