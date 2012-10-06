@@ -47,7 +47,7 @@ h1 {
 }
 
 
-#datasets_table {
+table {
     width: 75%;
     margin: 20px auto;
     
@@ -55,7 +55,7 @@ h1 {
 }
 
 /* MAIN VIEW */
-#datasets_table th {
+th {
     height: 40px;
     background: inherit;
     color: #000;
@@ -67,10 +67,11 @@ h1 {
 
 #datasets_table tr:hover {
     background: #eee;
+    opacity: 0.8;
 }
 
 
-#datasets_table td {
+td {
     height: 40px;
     vertical-align: middle;
     font-size: 0.9em;
@@ -138,4 +139,22 @@ th:only-child{
 
 #tableContainer {
     clear: left;
+}
+
+td input {
+    width: 80%;
+    padding: 5px;
+    background: inherit;
+
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+
+td input:hover {
+    background: #fff;
+}
+
+td input.active {
+    background: #fff;
 }
