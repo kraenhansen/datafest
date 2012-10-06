@@ -16,7 +16,7 @@ define(
 
                     var model = null;
                     $.getJSON(
-                        '/datafest/testSet.json', 
+                        'testSet.json', 
                         _.bind(function(data) { 
                             model = new Backbone.Model(data);
                             
