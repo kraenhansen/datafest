@@ -84,7 +84,7 @@ def get_record(url, transforms, identifier):
     return client.getRecord(identifier=identifier, metadataPrefix=ns)
 
 def get_key_values(url, transform_sheet, identifier):
-    transforms, errors = parse_transforms(transform_sheet)
+    transforms = parse_transforms(transform_sheet)
     if errors:
         print errors
     record = get_record(url, transforms, identifier)
