@@ -21,7 +21,10 @@ def parse_transforms(txt):
             prefixes.append((indent, prefixes[j][1] + '/' + line.strip()))
         else:
             path, field  = (x.strip() for x in line.split('->', 1))
-            transforms.append({'path': prefixes[-1][1] + '/' + path, 'field': field})
+            path = prefixes[-1][1] + '/' + path
+            path = path.lstrip('/')
+
+            transforms.append({'path': path, 'field': field})
     return transforms
 
 
@@ -72,6 +75,7 @@ def get_client(url, transforms):
     fields = dict((transform['field'], ('textList', transform['path']))
                   for transform in transforms)
     namespace = metadata[0][0]
+    print namespaces,fields
     registry.registerReader(namespace, MetadataReader(fields=fields, namespaces=namespaces))
     return c, namespace
 
