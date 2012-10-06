@@ -5,6 +5,7 @@ from oaipmh.client import Client
 from oaipmh.metadata import MetadataRegistry, oai_dc_reader
 from oaipmh.common import Header
 from django.conf.urls import url
+from transformer.transformer import get_key_values
 from itertools import * 
 
 class DatasetResource(ModelResource):
@@ -52,23 +53,19 @@ class RecordResource(Resource):
 
 	def obj_get(self, request=None, **kwargs):
 		dataset = Dataset.objects.get(pk=kwargs['dataset_pk'])
-		client = self._client(dataset)
-		result = client.getRecord(identifier=kwargs['pk'], metadataPrefix=dataset.metadata_prefix)
-		return result
+		metadata_values = get_key_values(url=dataset.pmh_url, transform_sheet=dataset.transformation, identifier=kwargs['pk'])
+		return dict(metadata = metadata_values, identifier=kwargs['pk'])
 
 	def dehydrate_identifier(self, bundle):
 		if isinstance(bundle.obj, Header):
-			header = bundle.obj
-		elif isinstance(bundle.obj, tuple):
-			header = bundle.obj[0]
+			return bundle.obj.identifier()
+		elif isinstance(bundle.obj, dict):
+			return bundle.obj.get('identifier')
 		else:
 			raise Exception("Trouble dehydrating the record identifier, got %s" % type(bundle.obj))
-		return header.identifier()
 
 	def dehydrate_metadata(self, bundle):
 		if isinstance(bundle.obj, Header):
 			return None
-		elif isinstance(bundle.obj, tuple):
-			data = bundle.obj[1]
-			print dir(data)
-			return ""
+		elif isinstance(bundle.obj, dict):
+			return bundle.obj.get('metadata', [])

@@ -7,4 +7,5 @@ class Dataset(models.Model):
 	contact_email = models.EmailField()
 	pmh_url = models.CharField(max_length=2000)
 	metadata_prefix = models.CharField(max_length=200)
+	transformation = models.TextField()
 
