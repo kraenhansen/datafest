@@ -1,0 +1,13 @@
+<div id="leftArrow" class="left">Previous</div>
+<div id="titleBox" class="left"><%= title %></div>
+<div id="rightArrow" class="left">Next</div>
+<div id="tableContainer">
+<table>
+<tr><th>Key</th><th>Value</th></tr>
+<%
+    _.each(kvTuples, function(tuple) { %>
+        <tr><td><%= tuple.key %></td><td><%= tuple.value %></td></tr>
+<%  });
+%>
+</table>
+</div>

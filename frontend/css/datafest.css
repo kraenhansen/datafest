@@ -1,0 +1,51 @@
+body {
+    padding: 10px 20px;
+
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 300;
+}
+
+
+#datasets_table {
+    width: 100%;
+    border: 1px #000 solid;
+    border-radius: 10px;
+}
+
+
+/* DATASETVIEW */
+#dataSetView {
+    width: 100%;
+
+    display: none;
+}
+
+.left {
+    float: left;
+}
+
+#leftArrow, #rightArrow {
+    width: 100px;
+    height: 100px;
+    background: #ddf;
+    text-align: center;
+    line-height: 100px;
+}
+
+#titleBox {
+    width: 500px;
+    width: -webkit-calc(100% - 200px);
+    width:    -moz-calc(100% - 200px);
+    width:         calc(100% - 200px);
+
+    height: 100px;
+    line-height: 100px;
+    text-align: center;
+    font-size: 36px;
+
+    
+}
+
+#tableContainer {
+    clear: left;
+}
