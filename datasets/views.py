@@ -2,6 +2,11 @@ from django.http import HttpResponse
 from django.template import Context, loader
 from oaipmh.client import Client
 from oaipmh.metadata import MetadataRegistry, oai_dc_reader
+from datasets.models import Dataset
+
+def populate_db(self):
+        Dataset.get_default()
+        return HttpResponse("Quite OK")
 
 def overview(request):
 	t = loader.get_template('datasets/overview.html')

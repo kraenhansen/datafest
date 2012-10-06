@@ -4,7 +4,7 @@ define([],
            var DataSetCollection = Backbone.Collection.extend(
                {
                    initialize: function() {
-                   
+										 
                    }
                }
            );

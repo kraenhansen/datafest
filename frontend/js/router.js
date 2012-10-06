@@ -16,10 +16,10 @@ define(
 
                     var model = null;
                     $.getJSON(
-                        'testSet.json', 
+                        '/api/dataset/1/record/?format=json', 
                         _.bind(function(data) { 
                             model = new Backbone.Model(data);
-                            
+													  
                             var records = new DataSetCollection(data.records);
                             $("#datasets_table").hide();
                             this.view.reset(model);

@@ -8,6 +8,8 @@ from django.conf.urls import url
 from transformer.transformer import get_key_values
 from itertools import * 
 
+
+
 class DatasetResource(ModelResource):
 	class Meta:
 		queryset = Dataset.objects.all()
@@ -48,11 +50,17 @@ class RecordResource(Resource):
 		return list(islice(result, offset, limit))
 
 	def obj_get_list(self, request=None, **kwargs):
-		dataset = Dataset.objects.get(pk=kwargs.get('dataset_pk'))
+                try:
+                        dataset = Dataset.objects.get(pk=kwargs.get('dataset_pk'))
+                except Dataset.DoesNotExist:
+                        dataset = Dataset.get_default()
 		return self.get_object_list(request, dataset)
 
 	def obj_get(self, request=None, **kwargs):
-		dataset = Dataset.objects.get(pk=kwargs['dataset_pk'])
+                try:
+                        dataset = Dataset.objects.get(pk=kwargs.get('dataset_pk'))
+                except Dataset.DoesNotExist:
+                        dataset = Dataset.get_default()
 		metadata_values = get_key_values(url=dataset.pmh_url, transform_sheet=dataset.transformation, identifier=kwargs['pk'])
 		return dict(metadata = metadata_values, identifier=kwargs['pk'])
 
