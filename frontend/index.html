@@ -14,7 +14,17 @@
 
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/datafest.css">
         <script src="js/vendor/modernizr-2.6.1.min.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
+                  
+        <script src="js/vendor/underscore-min.js"></script>
+        <script src="js/vendor/backbone-min.js"></script>
+
+        <script data-main="js/main" src="js/vendor/require.js"></script>
+
+        
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -22,19 +32,18 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
-        <p>Hello world! This is HTML5 Boilerplate.</p>
+        <h1>datafest</h1>
+        <p>Vi holder fest med dit data, og alle er inviteret!</p>
+        
+        <table id="datasets_table">
+          <thead>
+            <tr><th>Datasæt</th><th>Organisation</th><th>Kontaktperson</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><a href="#dataset/1">Test-datasæt 1</a></td><td>Kræn og JC</td><td>Kræn og JC</td></tr>
+            <tr><td><a href="#dataset/2">Test-datasæt 2</a></td><td>Kræn og JC</td><td>Kræn og JC</td></tr>
+          </tbody>
+        </table>
 
-        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.0.min.js"><\/script>')</script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
-
-        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-        <script>
-            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-            s.parentNode.insertBefore(g,s)}(document,'script'));
-        </script>
-    </body>
+</body>
 </html>
