@@ -91,4 +91,4 @@ def get_key_values(url, transform_sheet, identifier):
     transforms = parse_transforms(transform_sheet)
     record = get_record(url, transforms, identifier)
     metadata = record[1]
-    return metadata.getMap()
+    return dict((k, v[0]) for k,v in metadata.getMap().iteritems())
