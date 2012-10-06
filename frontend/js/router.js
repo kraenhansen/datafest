@@ -5,7 +5,8 @@ define(
             {
                 view: null,
                 routes: {
-                    "dataset/:id": "loadDataset"
+                    "dataset/:id": "loadDataset",
+                    "": "hideDataset"
                 },
                 initialize: function(view) {
                     this.view = view;
@@ -20,10 +21,15 @@ define(
                             model = new Backbone.Model(data);
                             
                             var records = new DataSetCollection(data.records);
-                            
+                            $("#datasets_table").hide();
                             this.view.reset(model);
                         }, this)
                     );
+                },
+                hideDataset: function() {
+                    console.log('hide');
+                    $("#datasets_table").show();
+                    this.view.hide();
                 }
             }
         );
