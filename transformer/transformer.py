@@ -89,5 +89,5 @@ def get_key_values(url, transform_sheet, identifier):
         print errors
     record = get_record(url, transforms, identifier)
     metadata = record[1]
+    print metadata.getMap()
     return metadata.getMap()
-
