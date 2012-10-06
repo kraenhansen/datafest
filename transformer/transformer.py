@@ -6,21 +6,26 @@ from itertools import *
 def parse_transforms(txt):
     errorneous_lines = []
     transforms = []
-
-    for line in txt.split('\n'):
-        line = line.strip()
-        if not line or line.startswith('#'):
+    prefixes = [(0, '')]
+    lines = txt.split('\n')
+    next_prefix = None
+    for line in lines:
+        if not line.strip() or line.strip().startswith('#'):
             continue
-        if not '->' in line:
-            errorneous_lines.append({
-                'line': line,
-                'reason': 'Missing ->'
-            })
-            continue
+        indent = len(line) - len(line.lstrip())
+        for j in xrange(len(prefixes) - 1, -1, -1):
+            if prefixes[j][0] < indent:
+                break
+        prefixes = prefixes[:j + 1]
+        if '->' not in line:
+            prefixes.append((indent, prefixes[j][1] + '/' + line.strip()))
+        else:
+            path, field  = (x.strip() for x in line.split('->', 1))
+            path = prefixes[-1][1] + '/' + path
+            path = path.lstrip('/')
 
-        path, field  = (x.strip() for x in line.split('->', 2))
-        transforms.append({'path': path, 'field': field})
-    return transforms, errorneous_lines
+            transforms.append({'path': path, 'field': field})
+    return transforms
 
 
 def read_fields(record, transforms):
@@ -70,6 +75,7 @@ def get_client(url, transforms):
     fields = dict((transform['field'], ('textList', transform['path']))
                   for transform in transforms)
     namespace = metadata[0][0]
+    print namespaces,fields
     registry.registerReader(namespace, MetadataReader(fields=fields, namespaces=namespaces))
     return c, namespace
 
@@ -82,8 +88,7 @@ def get_record(url, transforms, identifier):
     return client.getRecord(identifier=identifier, metadataPrefix=ns)
 
 def get_key_values(url, transform_sheet, identifier):
-    transforms, errors = parse_transforms(transform_sheet)
-    if errors:
-        print errors
-    return get_record(url, transforms, identifier)
-    
+    transforms = parse_transforms(transform_sheet)
+    record = get_record(url, transforms, identifier)
+    metadata = record[1]
+    return metadata.getMap()
