@@ -39,7 +39,11 @@ class RecordResource(Resource):
 		return self.get_object_list(request)
 
 	def obj_get(self, request=None, **kwargs):
-		
+		dataset = Dataset.objects.get(kwargs['dataset_pk'])
+		print dataset
+		client = self._client(dataset)
+		if client not None:
+			client.getRecord({'identifier'})
 		#bucket = self._bucket()
 		#message = bucket.get(kwargs['pk'])
 		#return RiakObject(initial=message.get_data())
