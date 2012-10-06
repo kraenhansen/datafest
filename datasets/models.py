@@ -8,5 +8,3 @@ class Dataset(models.Model):
 	pmh_url = models.CharField(max_length=2000)
 	metadata_prefix = models.CharField(max_length=200)
 
-class Resource(object):
-	title = ""
